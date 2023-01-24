@@ -6,11 +6,11 @@ import ButtonBox from './Components/ButtonBox';
 import Button from './Components/Button';
 
 const btnClassName = [
-  [["C", "button"],["+-", "button"],["%", "button"],["/", "opt button"]],
-  [[7, "button"],[8, "button"],[9, "button"],["x", "opt button"]],
-  [[4, "button"],[5, "button"],[6, "button"],["-", "opt button"]],
-  [[1, "button"],[2, "button"],[3, "button"],["+", "opt button"]],
-  [[0, "button"],[".", "button"],["=", "equals button"]]
+  [["AC", "button", "ALL_CLEAR"],["C", "button", "CLEAR"],["%", "button", "PERCENT"],["/", "opt button", "OPERATION"]],
+  [[7, "button", "NUMBER"],[8, "button", "NUMBER"],[9, "button", "NUMBER"],["x", "opt button", "OPERATION"]],
+  [[4, "button", "NUMBER"],[5, "button", "NUMBER"],[6, "button", "NUMBER"],["-", "opt button", "OPERATION"]],
+  [[1, "button", "NUMBER"],[2, "button", "NUMBER"],[3, "button", "NUMBER"],["+", "opt button", "OPERATION"]],
+  [[0, "button", "NUMBER"],[".", "button", "NUMBER"],["=", "equals button", "EQUALS"]]
 ];
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
             <Button
               value={btn[0]}
               style={btn[1].toString()}
+              event={btn[2].toString()}
             />))
             }
         </ButtonBox>
