@@ -4,6 +4,7 @@ import Wrapper from './Components/Warpper';
 import Screen from './Components/Screen';
 import ButtonBox from './Components/ButtonBox';
 import Button from './Components/Button';
+import { CalContextProvider } from './Components/Context/CalcContext';
 
 const btnClassName = [
   [["AC", "button", "ALL_CLEAR"],["C", "button", "CLEAR"],["%", "button", "PERCENT"],["/", "opt button", "OPERATION"]],
@@ -16,18 +17,19 @@ const btnClassName = [
 function App() {
   return (
     <div>
-      <Wrapper>
-        <Screen/>
-        <ButtonBox>
-          {btnClassName.flat().map((btn) => (
-            <Button
-              value={btn[0]}
-              style={btn[1].toString()}
-              event={btn[2].toString()}
-            />))
-            }
-        </ButtonBox>
-      </Wrapper>
+      <CalContextProvider>
+        <Wrapper>
+          <Screen/>
+          <ButtonBox>
+            {btnClassName.flat().map((btn) => (
+              <Button
+                value={btn[0]}
+                style={btn[1].toString()}
+              />))
+              }
+          </ButtonBox>
+        </Wrapper>
+      </CalContextProvider>
     </div>
   );
 }
